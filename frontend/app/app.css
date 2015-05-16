@@ -1,0 +1,74 @@
+/* app css stylesheet */
+
+body {
+    text-align: left;
+}
+
+.headerContent {
+    /*This CSS was made by Trevor on 11 May to display the header content. The header includes the home, add event,
+    and event feed buttons*/
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    background: #efefef;
+
+}
+
+/*.headerContent a img {*/
+    /*width: 160px;*/
+    /*height: 80px;*/
+    /*margin: 0px auto;*/
+    /*display: block;*/
+/*}*/
+
+
+.nav {
+    height: 150px;
+    background: #efefef;
+}
+
+#content {
+    width: 100%;
+    position: relative;
+    top: 400px;
+    background: #ebebeb;
+    height: 1500px;
+}
+
+.nav ul {
+    /*this will give additional traits to the ul in the nav section.  Added 12 May by Trevor*/
+    margin: 10px;
+    padding: 10px;
+}
+
+.nav ul li {
+    /*this gets rid of the dots*/
+    list-style: none;
+}
+
+.nav ul li a {
+    /*gets rid of the text decoration*/
+    text-decoration: none;
+    float: left;
+    /*by making it a block element we can now give it some padding*/
+    display: block;
+    padding: 10px 20px;
+    color: black;
+
+}
+
+.nav ul li a:hover {
+    color: white;
+}
+/*this is the CSS for the google maps*/
+
+#gmaps {
+    height: 400px;
+}
+
+
+.img-responsive {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+}

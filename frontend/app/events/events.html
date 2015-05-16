@@ -1,0 +1,29 @@
+<h2>Search:</h2>
+<label>By Caption: <input ng-model="event.caption"></label> <br>
+<label>By Location: <input ng-model="event.location"></label><br>
+<label>By Tags: <input ng-model="event.tags"></label><br>
+<label>By Date: <input ng-model="event.submitted_date_time"></label><br>
+<table id="searchObjResults" border="1">
+    <tr>
+        <th>Picture</th>
+        <th>Caption</th>
+        <th>Location</th>
+        <!--<th>Tags</th>-->
+        <th>Date Submitted</th>
+
+    </tr>
+
+    <!--Could also just use 'event' instead of 'eventObj'.  This is for educational purposes, and to avoid confusion.... -->
+
+    <tr ng-repeat="eventObj in events | orderBy : 'submitted_date_time' : true | filter: event: strict">
+        <td><a href="#/events/{{ eventObj.id }}"></a>
+            <img width="200" ng-src="{{ eventObj.picture }}"></td>
+        <td><a href="#/events/{{ eventObj.id }}">
+            {{eventObj.caption}}</a></td>
+        <td><a href="#/events/{{ eventObj.id }}">
+            {{ eventObj.latitude }}, {{ eventObj.longitude }}</a></td>
+        <!--<td ng-repeat="e in eventObj.tags"><a href="#/events/{{ eventObj.id }}">{{e.name}}</a></td>-->
+        <td><a href="#/events/{{ eventObj.id }}">
+            {{ eventObj.submitted_date_time | date: 'medium' }}</a></td>
+    </tr>
+</table>

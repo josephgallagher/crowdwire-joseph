@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CrowdWire</title>
+    <meta name="CrowdWire" content="An information hub that combines local news into a topographical layout">
+    <meta name="keywords"
+          content="Maps, News, social-network, breaking news, crowdwire, news app, news feed, local news">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="app.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="app.css">
+    <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+
+</head>
+
+<body>
+<div class="header">
+    <div class="headerContent">
+
+   <!--This is the div for the title bar/buttons-->
+        <div class="nav">
+            <a href="#">
+                <img src="media/drop_for_codewire.png" />
+            </a>
+
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#/events">Event Feed</a></li>
+                <li><a href="#/add-event">Add Event</a></li>
+                <li><a href="#/add-event">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div id="banner">
+        <h2>this is the banner</h2>
+    </div>
+
+    <div id="content">
+        <p>content goes here</p>
+
+    <!--end of the new parallax addition-->
+
+<!-- This is the beginning map v. 7 May 2015#-->
+        <div class="col-sm-8 col-sm-offset-2">
+            <!--<p>Location</p>-->
+            <br>
+                <div my-map=""></div>
+            <br>
+        </div>
+
+            <div class="site-background">
+                <div class="container-fluid">
+                    <div ng-view
+                         class="col-sm-8 col-sm-offset-2 site-foreground">
+                    </div>
+                </div>
+            </div>
+<!-- this is the end of the map#-->
+
+
+<!--this is the div with the footer and copyright information-->
+
+        <div id="footer" class="">
+            <p>&copy; Copyright 2015</p>
+        </div>
+
+<!--<div id="photo_grid">-->
+    <!--<p>Photo</p>-->
+
+
+
+
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+-->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/restangular/dist/restangular.min.js"></script>
+<script src="bower_components/lodash/dist/lodash.min.js"></script>
+<!--this is the google api that brings in the javascript file to do the interactions(listeners, clicking, etc)#-->
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<!--<script src="bower_components/angular-google-maps/dist/angular-google-maps.min.js"></script>-->
+<!--<script src="bower_components/lodash/lodash.min.js"></script>-->
+<script src="app.js"></script>
+<script src="events/events.js"></script>
+<script src="event-detail/eventDetail.js"></script>
+<script src="add-event/addEvent.js"></script>
+<script src="components/version/version.js"></script>
+<script src="components/version/version-directive.js"></script>
+<script src="components/version/interpolate-filter.js"></script>
+</body>
+</html>

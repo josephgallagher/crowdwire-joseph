@@ -1,0 +1,66 @@
+<div class="form-group" ng-controller="AddEventCtrl">
+
+    <!--<label>Location:</label>-->
+    <!--<br>-->
+    <!--<input type="button" onclick="angular.element(this).scope().addLocation()"/>Set Location-->
+
+
+    <br><label>Caption:</label><br>
+    <textarea class="form-control" ng-model="event.caption"></textarea>
+
+
+    <label>Tags:</label><br>
+    <input class="form-control" ng-model="tagText">
+    <button ng-click="addTag(tagText)" class="btn btn-xs btn-info">Add hashtags</button>
+    <br>
+
+
+    <br><label>Event Photo:</label><br>
+    <img class="img-responsive" ng-src="{{ event.picture }}">
+    <input type="file" id="file" name="file" accept="image/gif, image/x-png, image/jpeg"
+           onchange="angular.element(this).scope().addPhoto()"/>
+
+
+    <br>
+    <button ng-click="addEvent()" class="btn btn-md btn-success glyphicon glyphicon-floppy-disk pull-right">
+        Submit to Journal
+    </button>
+
+</div>
+<!--End of form-group div-->
+
+
+<div ng-controller="EventsCtrl">
+    <h2>Search:</h2>
+    <label>By Caption: <input ng-model="event.caption"></label>
+    <label>By Location: <input ng-model="event.location"></label>
+    <!--<label>By Tags: <input ng-model="event.tags"></label>-->
+    <label>By Date: <input ng-model="event.submitted_date_time"></label><br>
+    <table id="searchObjResults" border="1">
+        <tr>
+            <th>Picture</th>
+            <th>Caption</th>
+            <th>Location</th>
+            <th>Address</th>
+            <!--<th>Tags</th>-->
+            <th>Date Submitted</th>
+
+        </tr>
+
+        <!--Could also just use 'event' instead of 'eventObj'.  This is for educational purposes, and to avoid confusion.... -->
+
+        <tr ng-repeat="eventObj in events | orderBy : 'submitted_date_time' : true | filter: event: strict">
+            <td><a href="#/events/{{ eventObj.id }}"></a>
+                <img width="200" ng-src="{{ eventObj.picture }}"></td>
+            <td><a href="#/events/{{ eventObj.id }}">
+                {{eventObj.caption}}</a></td>
+            <td><a href="#/events/{{ eventObj.id }}">
+                {{ eventObj.latitude }}, {{ eventObj.longitude }}</a></td>
+            <td><a href="#/events/{{ eventObj.id }}">
+                {{ eventObj.address }}</a></td>
+            <!--<td ng-repeat="e in eventObj.tags"><a href="#/events/{{ eventObj.id }}">{{e.name}}</a></td>-->
+            <td><a href="#/events/{{ eventObj.id }}">
+                {{ eventObj.submitted_date_time | date: 'medium' }}</a></td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,13 @@
+
+.idea/
+backend/db.sqlite3
+*.pyc
+photos/
+*.orig
+logs/*
+!.gitkeep
+node_modules/
+bower_components/
+tmp
+.DS_Store
+
